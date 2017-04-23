@@ -1,5 +1,7 @@
 #pragma once
 
+//Contains Types of tokens
+
 enum TokenType {
 	PLUS,
 	MINUS,
