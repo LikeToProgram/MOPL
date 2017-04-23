@@ -7,7 +7,7 @@
 using namespace std;
 
 int main() {
-	const string code = "+-*/"; // Write here your code.
+	const string code = "+-*/"; //Write here your code. 
 	Lexer l(code);
 	vector<Token> result = l.tokenize();
 	for (int d = 0; d < result.size(); d++)
