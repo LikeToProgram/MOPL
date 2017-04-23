@@ -41,11 +41,23 @@ private:
 		return get(0);
 	}
 
+	//Tokenize string to operator(+, -, *, /, ...)
+	void tokenizeOperator() {
+		char current = get(0);
+		addToken(OPERATOR_TOKENS[OPERATOR_CHARS.find(current)]);
+		pos++;
+	}
+
 public:
 	Lexer(string input) : input(input), size(input.size()) {}
 
+	//This method tokenize string to vector of tokens
 	vector<Token> tokenize() {
-
+		char current;
+		while ((current = get(0)) != '\0') {
+			if (OPERATOR_CHARS.find(current) != -1) tokenizeOperator();
+			else pos++;	//Whitespaces
+		}
 		return result;
 	}
 };
